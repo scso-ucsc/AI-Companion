@@ -22,6 +22,11 @@ public class IsOnPressurePlate : Node //Inheriting from Node Class
     }
 
     private Transform findPressurePlateLocation(){
+        if(ai.GetPressurePlateLocation() != null){ //This function prevents AI Companion from switching to another pressurePlate should the player move
+            //if(CheckIfSpotIsValid(ai.GetPressurePlateLocation())){ //UNCOMMENT THIS WHEN CheckIfSpotIsValid() is made
+                return ai.GetPressurePlateLocation();
+            //}
+        }
         Transform pressurePlateLocation = null;
         //FIND PRESSURE PLATE TO GO TO...
         return pressurePlateLocation;
