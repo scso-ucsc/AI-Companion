@@ -8,8 +8,10 @@ public class CompanionAI : MonoBehaviour
     [SerializeField] private float chasingRange;
     [SerializeField] private float minChaseDistance; // New serialized field for minimum chase distance
     [SerializeField] private Transform playerTransform;
+    [SerializeField] private PressurePlate[] availablePlates;
 
     private NavMeshAgent agent;
+    private Transform pressurePlateLocation;
     private Node topNode;
 
     private void Awake()
@@ -26,10 +28,15 @@ public class CompanionAI : MonoBehaviour
     {
         ChaseNode chaseNode = new ChaseNode(playerTransform, agent, this, minChaseDistance); // Pass the minimum distance
         RangeNode chasingRangeNode = new RangeNode(chasingRange, playerTransform, transform);
+        
+        //Creating Nodes for Pressure Plate Interactions
+        IsOnPressurePlate isOnPressurePlateNode = new IsOnPressurePlate(availablePlates, playerTransform, this);
+        GoToPressurePlate goToPressurePlateNode = new GoToPressurePlate(agent, this);
 
         Sequence chaseSequence = new Sequence(new List<Node> { chasingRangeNode, chaseNode });
+        Sequence pressurePlateSequence = new Sequence(new List<Node> {isOnPressurePlateNode, goToPressurePlateNode});
 
-        topNode = chaseSequence;
+        topNode = new Selector(new List<Node> {chaseSequence, pressurePlateSequence});
     }
 
     private void Update()
@@ -39,5 +46,9 @@ public class CompanionAI : MonoBehaviour
         {
             agent.isStopped = true;
         }
+    }
+
+    public Transform GetPressurePlateLocation(){
+        return pressurePlateLocation;
     }
 }
