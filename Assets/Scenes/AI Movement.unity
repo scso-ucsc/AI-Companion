@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2ca24bb886feb4b8f9fcdc997fd927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chasingRange: 30
+  chasingRange: 40
   minChaseDistance: 3
   playerTransform: {fileID: 277389310}
 --- !u!4 &277389310 stripped
@@ -602,11 +602,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1970838355150965596, guid: ae8feeda02cfb49cc9f79c7a14f50e26, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1e-45
+      value: 3.003937e-22
       objectReference: {fileID: 0}
     - target: {fileID: 1970838355150965596, guid: ae8feeda02cfb49cc9f79c7a14f50e26, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -4.1483497e-23
       objectReference: {fileID: 0}
     - target: {fileID: 5457725868223740169, guid: ae8feeda02cfb49cc9f79c7a14f50e26, type: 3}
       propertyPath: m_Name
@@ -614,11 +614,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5803415674035718298, guid: ae8feeda02cfb49cc9f79c7a14f50e26, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000001707311
+      value: -0.000000017083192
       objectReference: {fileID: 0}
     - target: {fileID: 5803415674035718298, guid: ae8feeda02cfb49cc9f79c7a14f50e26, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000021373872
+      value: 0.0000000021386493
       objectReference: {fileID: 0}
     - target: {fileID: 6648535479539170449, guid: ae8feeda02cfb49cc9f79c7a14f50e26, type: 3}
       propertyPath: m_LocalRotation.y

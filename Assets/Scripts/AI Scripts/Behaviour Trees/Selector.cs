@@ -28,7 +28,7 @@ public class Selector : Node
                     break;
             }
         }
-        _nodeState = NodeState.FAILURE;
+        _nodeState = NodeState.FAILURE; //Setting to failure because we've run through all the nodes
         return _nodeState;
     }
 }

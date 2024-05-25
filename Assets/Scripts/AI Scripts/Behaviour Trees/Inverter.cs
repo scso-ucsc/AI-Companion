@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inverter : Node
+public class Inverter : Node //This code inverts the demands of different nodes in a tree; this prevents the need to write a brand new node
 {
 	protected Node node;
 
