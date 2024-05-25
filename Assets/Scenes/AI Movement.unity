@@ -165,6 +165,7 @@ MonoBehaviour:
   chasingRange: 40
   minChaseDistance: 3
   playerTransform: {fileID: 277389310}
+  availablePlates: []
 --- !u!4 &277389310 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8748711764930433876, guid: 523725d83f0c148e590de37fceea7f2c, type: 3}
@@ -409,7 +410,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1931424118
 BoxCollider:
@@ -602,11 +603,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1970838355150965596, guid: ae8feeda02cfb49cc9f79c7a14f50e26, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 3.003937e-22
+      value: 1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 1970838355150965596, guid: ae8feeda02cfb49cc9f79c7a14f50e26, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -4.1483497e-23
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5457725868223740169, guid: ae8feeda02cfb49cc9f79c7a14f50e26, type: 3}
       propertyPath: m_Name
@@ -614,11 +615,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5803415674035718298, guid: ae8feeda02cfb49cc9f79c7a14f50e26, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000017083192
+      value: -0.00000001707311
       objectReference: {fileID: 0}
     - target: {fileID: 5803415674035718298, guid: ae8feeda02cfb49cc9f79c7a14f50e26, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000021386493
+      value: 0.0000000021373872
       objectReference: {fileID: 0}
     - target: {fileID: 6648535479539170449, guid: ae8feeda02cfb49cc9f79c7a14f50e26, type: 3}
       propertyPath: m_LocalRotation.y
