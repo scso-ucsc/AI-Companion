@@ -20,7 +20,7 @@ public class GoToPressurePlate : Node
             return NodeState.FAILURE;
         }
         float distance = Vector3.Distance(pressurePlateLocation.position, agent.transform.position);
-        if (distance > 0.2f)
+        if (distance > .1f)
         {
             agent.isStopped = false;
             agent.SetDestination(pressurePlateLocation.position);

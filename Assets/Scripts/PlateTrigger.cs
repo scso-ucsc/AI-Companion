@@ -6,6 +6,7 @@ public class PlateTrigger : MonoBehaviour
 {
     [SerializeField] Material orange;
     [SerializeField] Material green;
+    [SerializeField] GameObject partner_plate;
 
     void Awake()
     {
@@ -38,5 +39,9 @@ public class PlateTrigger : MonoBehaviour
                 PlayerPrefs.SetInt("PlayerOnPlate", 0);
             }
         }
+    }
+
+    public Transform getPartnerPlateTransform(){
+        return partner_plate.transform;
     }
 }

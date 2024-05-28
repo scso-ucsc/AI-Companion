@@ -17,10 +17,6 @@ public class NewDoor : MonoBehaviour
             door.transform.position += new Vector3(0, 3, 0);
             isClosed = false;
         }
-        if (!isClosed && (P1.tag == "off" || P2.tag == "off"))
-        {
-            door.transform.position -= new Vector3(0, 3, 0);
-            isClosed = true;
-        }
+
     }
 }
