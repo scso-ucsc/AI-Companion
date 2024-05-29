@@ -44,6 +44,10 @@ public class CompanionAI : MonoBehaviour
 
     private void Update()
     {
+        if(playerTransform.position.y <= -4){
+            respawnCompanion();
+        }
+        
         topNode.Evaluate();
         if (topNode.nodeState == NodeState.FAILURE)
         {
@@ -57,5 +61,9 @@ public class CompanionAI : MonoBehaviour
     
     public void setPressurePlateLocation(Transform location){
         pressurePlateLocation = location;
+    }
+
+    private void respawnCompanion(){
+        this.transform.position = new Vector3(4.2f, 1.5f, -4.3f);
     }
 }

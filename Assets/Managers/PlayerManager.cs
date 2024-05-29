@@ -50,5 +50,13 @@ public class PlayerManager : MonoBehaviour
 
             controller.Move(direction * moveSpeed * Time.deltaTime); //Moving Player; Multiplying by Time.deltaTime makes it frame rate independent
         }
+
+        if(transform.position.y <= -5){
+            respawnPlayer();
+        }
+    }
+
+    private void respawnPlayer(){
+        this.transform.position = new Vector3(0f, 1.72f, 0f);
     }
 }
