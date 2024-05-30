@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private float moveSpeed = 10f, gravityForce = -15f, jumpSpeed = 4f, rotationTime = 0.2f, groundCheckRadius = 0.4f;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundMask;
+    [SerializeField] GameObject companion;
     private float horizontalInput, verticalInput, rotationSmoothVelocity;
     private Vector3 direction, yDirection;
     private bool isGrounded;
@@ -51,12 +53,19 @@ public class PlayerManager : MonoBehaviour
             controller.Move(direction * moveSpeed * Time.deltaTime); //Moving Player; Multiplying by Time.deltaTime makes it frame rate independent
         }
 
-        if(transform.position.y <= -5){
-            respawnPlayer();
+        if(transform.position.y <= -2){
+
+            StartCoroutine(respawnPlayer());
         }
     }
 
-    private void respawnPlayer(){
+    private IEnumerator respawnPlayer(){
+        companion.GetComponent<NavMeshAgent>().enabled = false;
         this.transform.position = new Vector3(0f, 1.72f, 0f);
+        companion.GetComponent<CharacterController>().enabled = false;
+        companion.transform.position = new Vector3(4.2f, 1.5f, -4.3f);
+        companion.GetComponent<CharacterController>().enabled = true;
+        yield return null;
+        companion.GetComponent<NavMeshAgent>().enabled = true;
     }
 }
